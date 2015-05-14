@@ -1,0 +1,9 @@
+#!/bin/bash
+# serial
+g++ moab_thread.cpp -I/mnt/data/opt/moab_dev/include -L/mnt/data/opt/moab_dev/lib -g -lMOAB -o moab_thread
+# threaded
+g++ moab_thread.cpp -I/mnt/data/opt/moab_dev/include -L/mnt/data/opt/moab_dev/lib -g -lMOAB -fopenmp -o moab_thread_omp
+# serial
+g++ dagmc_thread.cpp -I/mnt/data/opt/moab_dev/include -L/mnt/data/opt/moab_dev/lib -g -pg -lMOAB -ldagmc -o dagmc_thread
+# dagmc thread
+g++ dagmc_thread.cpp -I/mnt/data/opt/moab_dev/include -L/mnt/data/opt/moab_dev/lib -g -lMOAB -ldagmc -fopenmp -o dagmc_thread_omp
